@@ -1,0 +1,17 @@
+{
+  "name": "smartinstech-baggage-api",
+  "version": "1.0.0",
+  "description": "Smartinstech - baggage - api",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Tadej Rola",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "mysql": "^2.15.0"
+  }
+}
