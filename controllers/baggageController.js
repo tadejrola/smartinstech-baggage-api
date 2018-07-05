@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 var mysql = require('../dbHelper/connection.js').pool;
+const statuses = require("../dbHelper/statusOptions.js").statuses;
 
 router.get('/', async (req, res) => {
     mysql.getConnection(function (err, conn) {
@@ -15,10 +16,8 @@ router.get('/:referenceNumber', async (req, res, next) => {
     const id = req.params.referenceNumber;
     mysql.getConnection(function (err, conn) {
         conn.query("select * from insurance where referenceNumber='" + id + "'", function (err, rows) {
-            let baggageLocation = {
-                status: "Na prevzemnem mestu"
-            };
-            res.json(baggageLocation);
+            var x = Math.floor((Math.random() * 7));
+            res.json(statuses[x]);
         })
 
     })
