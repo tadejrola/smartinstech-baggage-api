@@ -13,14 +13,16 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/:referenceNumber', async (req, res, next) => {
-    const id = req.params.referenceNumber;
-    mysql.getConnection(function (err, conn) {
-        conn.query("select * from insurance where referenceNumber='" + id + "'", function (err, rows) {
-            var x = Math.floor((Math.random() * 7));
-            res.json(statuses[x]);
-        })
+    // const id = req.params.referenceNumber;
+    // mysql.getConnection(function (err, conn) {
+    //     conn.query("select * from insurance where referenceNumber='" + id + "'", function (err, rows) {
+    //         var x = Math.floor((Math.random() * 7));
+    //         res.json(statuses[x]);
+    //     })
 
-    })
+    // })
+    var x = Math.floor((Math.random() * 7));
+    res.json(statuses[x]);
 });
 
 router.get('/baggagesForTenant/:id', async (req, res, next) => {
